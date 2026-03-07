@@ -12,8 +12,7 @@ class Vehicle {
     }
 
     void fuelEfficiency(double distance, double fuel) {
-        double efficiency = distance / fuel;
-        System.out.println("Fuel Efficiency: " + efficiency + " km/l");
+        System.out.println("Fuel Efficiency: " + (distance / fuel) + " km/l");
     }
 
     void maxSpeed(int speed) {
@@ -26,12 +25,26 @@ class Truck extends Vehicle {
     Truck(String make, String model, int year, String fuelType) {
         super(make, model, year, fuelType);
     }
+
+    public static void main(String[] args) {
+        Truck t = new Truck("Volvo", "FH16", 2022, "Diesel");
+        System.out.println("Truck Details");
+        t.fuelEfficiency(400, 50);
+        t.maxSpeed(120);
+    }
 }
 
 class Car extends Vehicle {
 
     Car(String make, String model, int year, String fuelType) {
         super(make, model, year, fuelType);
+    }
+
+    public static void main(String[] args) {
+        Car c = new Car("Toyota", "Camry", 2023, "Petrol");
+        System.out.println("Car Details");
+        c.fuelEfficiency(500, 25);
+        c.maxSpeed(180);
     }
 }
 
@@ -42,17 +55,9 @@ class Motorcycle extends Vehicle {
     }
 
     public static void main(String[] args) {
-
-        Car car = new Car("Toyota", "Camry", 2022, "Petrol");
-        car.fuelEfficiency(500, 25);
-        car.maxSpeed(180);
-
-        Truck truck = new Truck("Volvo", "FH", 2021, "Diesel");
-        truck.fuelEfficiency(400, 50);
-        truck.maxSpeed(120);
-
-        Motorcycle bike = new Motorcycle("Yamaha", "R15", 2023, "Petrol");
-        bike.fuelEfficiency(300, 10);
-        bike.maxSpeed(150);
+        Motorcycle m = new Motorcycle("Yamaha", "R15", 2024, "Petrol");
+        System.out.println("Motorcycle Details");
+        m.fuelEfficiency(300, 10);
+        m.maxSpeed(150);
     }
 }
